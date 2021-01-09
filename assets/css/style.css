@@ -1,0 +1,446 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;900&display=swap");
+
+:root {
+  /* Fonts */
+  --Roboto: "Roboto", sans-serif;
+}
+
+:root {
+  /* Colors */
+  --Primary-color: #ff577f;
+  --White-color: #fff;
+  --Black-color: #111;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--Roboto);
+}
+
+li {
+  margin-left: 30px;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--White-color);
+  font-weight: 100;
+  font-size: 1rem;
+}
+
+/* ========== Layout ========== */
+.bd-container {
+  max-width: 1224px;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+@media (min-width: 1224px) {
+  .bd-container {
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+/* ========== Layout END ========== */
+
+/* ========== Header ========== */
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  right: 0;
+  padding: 25px 50px;
+  z-index: 1000;
+  transition: 0.5s;
+  /* background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);*/
+}
+
+header.sticky {
+  background-color: var(--White-color);
+  padding: 20px 20px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+header.sticky .nav-menu li a,
+header.sticky .logo,
+header.sticky .social-media a {
+  color: var(--Black-color);
+}
+
+.nav-menu {
+  position: relative;
+  display: flex;
+}
+
+header li a:hover {
+  color: var(--Primary-color);
+}
+
+header.sticky li a:hover,
+header.sticky .social-media a:hover {
+  color: var(--Primary-color);
+}
+
+.social-media a {
+  margin-left: 10px;
+  font-size: 1.2rem;
+}
+
+.social-media a:hover {
+  color: var(--Primary-color);
+}
+
+.nav-active {
+  color: var(--Primary-color);
+}
+/* ========== Header END ========== */
+
+/* ========== Banner Section ========== */
+.banner-container {
+  position: relative;
+  background-color: var(--Black-color);
+  z-index: 1;
+}
+
+.banner-container::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.5;
+  background-image: url(/assets/img/banner.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.banner-content {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--White-color);
+}
+
+.banner-content h2 {
+  font-size: 5rem;
+  text-transform: uppercase;
+  max-width: 550px;
+  line-height: 65px;
+}
+
+.banner-content p {
+  max-width: 650px;
+  line-height: 25px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.banner-content .btn-learn-more {
+  max-width: 150px;
+  outline: none;
+  border: none;
+  background-color: var(--Primary-color);
+  color: var(--White-color);
+  padding: 15px 20px;
+}
+
+.banner-content .btn-learn-more:hover {
+  background-color: var(--White-color);
+  color: var(--Primary-color);
+  cursor: pointer;
+}
+/* ========== Banner Section END ========== */
+
+/* ========== Selection Section ========== */
+.selection-contianer {
+  margin-bottom: 40px;
+}
+.selection-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  text-align: center;
+  padding: 0;
+}
+
+.selection-content .for-him h2,
+.for-her h2 {
+  position: absolute;
+  color: var(--White-color);
+  text-transform: uppercase;
+  letter-spacing: 20px;
+  width: 550px;
+  max-width: 100%;
+  left: 50%;
+  top: 50%;
+  font-size: 2rem;
+  transform: translate(-50%, -50%);
+}
+
+.selection-content .for-him span,
+.for-her span {
+  position: absolute;
+  color: var(--White-color);
+  letter-spacing: 5px;
+  font-style: italic;
+  text-transform: uppercase;
+  width: 550px;
+  max-width: 100%;
+  left: 50%;
+  top: 40%;
+  font-size: 1rem;
+  transform: translate(-50%, -50%);
+}
+
+.for-him {
+  position: relative;
+  background-image: url(/assets/img/man.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 450px;
+}
+
+.for-her {
+  position: relative;
+  background-image: url(/assets/img/woman.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 450px;
+}
+/* ========== Selection Section END ========== */
+
+/* ========== About Section ========== */
+
+.about-container {
+  margin-top: 80px;
+}
+
+.about-content {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.about-img img {
+  width: 850px;
+  max-width: 100%;
+  height: auto;
+  margin-top: 80px;
+}
+
+.about-text h2 {
+  width: 380px;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  line-height: 50px;
+}
+
+.about-text p {
+  margin-bottom: 40px;
+}
+
+.about-list h3 {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.about-list span {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  font-style: italic;
+  font-weight: 100;
+}
+
+.about-list p {
+  font-size: 0.9rem;
+  font-weight: 100;
+}
+
+/* ========== About Section  END ========== */
+
+/* ========== CLasses Section ========== */
+.classes-container {
+  background-color: var(--Black-color);
+  position: relative;
+  z-index: -1;
+}
+
+.classes-container::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.4;
+  background-image: url(/assets/img/classes.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.classes-content {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--White-color);
+  text-align: center;
+}
+
+.classes-title h2 {
+  text-transform: uppercase;
+  font-size: 3rem;
+}
+
+.classes-title p {
+  max-width: 850px;
+  margin-top: 10px;
+}
+
+.classes-list {
+  margin-top: 50px;
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.class-list h3 {
+  text-transform: uppercase;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.class-list span {
+  display: block;
+  font-size: 0.7rem;
+}
+
+.class-list p {
+  font-size: 0.8rem;
+}
+/* ========== CLasses Section END ========== */
+
+/* ========== Media Query Section ========== */
+@media (max-width: 900px) {
+  /* ========== Header ========== */
+  header {
+    padding: 20px 10px;
+  }
+
+  header .nav-menu,
+  .social-media {
+    display: none;
+  }
+
+  header .nav-menu.active {
+    width: 80%;
+    height: 550px;
+    background-color: var(--White-color);
+    position: fixed;
+    top: 78px;
+    left: 10%;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+  }
+
+  header .nav-menu li {
+    margin-left: 0;
+    margin-bottom: 40px;
+  }
+
+  .nav-menu li a {
+    font-size: 1.6rem;
+    color: var(--Black-color);
+    font-weight: 400;
+  }
+
+  .menu-toggle {
+    position: relative;
+    width: 50px;
+    height: 30px;
+    background: url(/assets/img/icon-hamburger.svg) no-repeat;
+    background-size: 25px;
+    cursor: pointer;
+  }
+
+  .menu-toggle.active {
+    background: url(/assets/img/icon-close.svg) no-repeat;
+    background-size: 25px;
+  }
+  /* ========== Header END ========== */
+
+  /* ========== Selection ========== */
+  .selection-content {
+    grid-template-columns: 1fr;
+  }
+  /* ========== Selection END ========== */
+
+  /* ========== About ========== */
+  .about-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .about-text h2 {
+    margin: auto;
+    margin-bottom: 10px;
+  }
+  /* ========== About END ========== */
+
+  /* ========== CLasses Section ========== */
+
+  .classes-list {
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+  }
+  .class-list:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1 / 3;
+  }
+  .class-list:nth-child(2) {
+    grid-column: 2;
+    grid-row: 2 / 4;
+    margin: auto;
+  }
+
+  .class-list:nth-child(3) {
+    grid-column: 3;
+    grid-row: 1 / span 3;
+  }
+
+  .class-list:nth-child(4) {
+    grid-column: 1;
+    grid-row: 4 / 5;
+  }
+
+  .class-list:nth-child(5) {
+    grid-column: 3;
+  }
+  /* ========== CLasses Section END ========== */
+}

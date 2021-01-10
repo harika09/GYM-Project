@@ -1,202 +1,534 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gym</title>
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;900&display=swap");
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="/assets/css/style.css">
+:root {
+  /* Fonts */
+  --Roboto: "Roboto", sans-serif;
+}
 
-    <!-- Fontawesome -->
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+:root {
+  /* Colors */
+  --Primary-color: #ff577f;
+  --White-color: #fff;
+  --Black-color: #111;
+  --Pale-White: #f7f7f7;
+}
 
-</head>
-<body>
-    <!--========== Header Content ==========-->
-    <header class="header-container">
-        <div class="header-content bd-container" id="header-content">
-            <a href="#" class="logo">GYM LOGO</a>
-            <div class="menu-toggle"></div>
-            <ul class="nav-menu">
-                <li><a href="#" class="nav-item nav-active">Home</a></li>
-                <li><a href="#" class="nav-item">About Us</a></li>
-                <li><a href="#" class="nav-item">Services</a></li>
-                <li><a href="#" class="nav-item">Portfolio</a></li>
-                <li><a href="#" class="nav-item">Shop</a></li>
-                <li><a href="#" class="nav-item">Contact</a></li>
-            </ul>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--Roboto);
+}
 
-            <div class="social-media">
-                <a href="www.facebook.com"><i class="fab fa-facebook-f"></i></a>
-                <a href="www.twitter.com"> <i class="fab fa-twitter"></i></a>
-                <a href="www.instagram.com"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
-    </header>
-    <!--========== Header Content END ==========-->
-    
-    <!--========== Main Content ==========-->
-    <main class="main-content">
+li {
+  margin-left: 30px;
+  list-style: none;
+}
 
-        <!--========== Banner Section ==========-->
-        <section class="banner-container">
-            <div class="banner-content bd-container">
-                <h2 class="banner-text">Health Power Happiness</h2>
-                <p class="banner-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit modi consequatur officia natus repellat. Ullam tenetur accusamus nemo omnis vitae.</p>
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--White-color);
+  font-weight: 100;
+  font-size: 1rem;
+}
 
-                <button type="button" class="btn-learn-more">Learn More</button>
-            </div>
-        </section>
-        <!--========== Banner Section END ==========-->
+/* ========== Layout ========== */
+.bd-container {
+  max-width: 1224px;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
 
-        <!--========== Selection Section ==========-->
-        <section class="selection-container">
-            <div class="selection-content ">
-                <div class="for-him">
-                    <span>Program</span>
-                    <h2>For / Him</h2>
-                </div>
+@media (min-width: 1224px) {
+  .bd-container {
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+/* ========== Layout END ========== */
 
-                <div class="for-her">
-                    <span>Program</span>
-                    <h2>For / Her</h2>
-                </div>
-            </div>
-        </section>
-        <!--========== Selection Section END ==========-->
+/* ========== Header ========== */
 
-        <!--========== About Section ==========-->
-        <section class="about-container">
-            <div class="about-content bd-container">
-                <div class="about-img">
-                    <img src="/assets/img/about-info2.jpeg" alt="about">
-                </div>
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-                <div class="about-text">
-                    <h2>Everything is possible with us</h2>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius, ducimus.</p>
-                    
-                    <div class="about-list">
-                        <h3>Build Perfect Body</h3>
-                        <span>Lorem ipsum dolor sit amet consectetur </span>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur quos repellat ex illo inventore delectus magnam libero molestiae odio consectetur.</p>
-                    </div>
+header {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  right: 0;
+  padding: 25px 50px;
+  z-index: 1000;
+  transition: 0.5s;
+  /* background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);*/
+}
 
-                    <div class="about-list">
-                        <h3>Gym Work Programs</h3>
-                        <span>Lorem ipsum dolor sit amet consectetur </span>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur quos repellat ex illo inventore delectus magnam libero molestiae odio consectetur.</p>
-                    </div>
+header.sticky {
+  background-color: var(--White-color);
+  padding: 20px 20px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+}
 
-                    <div class="about-list">
-                        <h3>Qualified Trainers</h3>
-                        <span>Lorem ipsum dolor sit amet consectetur </span>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur quos repellat ex illo inventore delectus magnam libero molestiae odio consectetur.</p>
-                    </div>
-               
-                </div>
-            </div>
-        </section>
-        <!--========== About Section END ==========-->
+header.sticky .nav-menu li a,
+header.sticky .logo,
+header.sticky .social-media a {
+  color: var(--Black-color);
+}
 
-        <!--========== Classes Section ==========-->
-        <section class="classes-container">
-            <div class="classes-content bd-container">
-                <div class="classes-title">
-                    <h2>Our Classes</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur sint nisi officiis tempore ratione ex atque quam obcaecati earum possimus?</p>
-                </div>
+.nav-menu {
+  position: relative;
+  display: flex;
+}
 
-                <div class="classes-list">
+header li a:hover {
+  color: var(--Primary-color);
+}
 
-                    <div class="class-list">
-                        <span>Monday, 08:00 </span>
-                        <h3>streching classes</h3>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                    </div>
-                    
-                    <div class="class-list">
-                        <span>Monday, 08:00 </span>
-                        <h3>Kickboxing</h3>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                    </div>
-                    
-                    <div class="class-list">
-                        <span>Monday, 08:00 </span>
-                        <h3>Pole Dance</h3>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                    </div>
+header.sticky li a:hover,
+header.sticky .social-media a:hover {
+  color: var(--Primary-color);
+}
 
-                    <div class="class-list">
-                        <span>Monday, 08:00 </span>
-                        <h3>Boxing classes</h3>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                    </div>
+.social-media a {
+  margin-left: 10px;
+  font-size: 1.2rem;
+}
 
-                    <div class="class-list">
-                        <span>Monday, 08:00 </span>
-                        <h3>Yoga Classes</h3>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                    </div>
+.social-media a:hover {
+  color: var(--Primary-color);
+}
 
-                </div>
-            </div>
-        </section>
-        <!--========== Classes Section END ==========-->
+.nav-active {
+  color: var(--Primary-color);
+}
+/* ========== Header END ========== */
 
-        <!--========== Training Section ==========-->
-        <section class="training-card-container">
-            <div class="training-card-content bd-container">
+/* ========== Banner Section ========== */
+.banner-container {
+  position: relative;
+  background-color: var(--Black-color);
+  z-index: 1;
+}
 
-                <div class="training cards">
-                    <img src="/assets/img/dumbbell.png" alt="dumbbell">
-                    <h3> Functional Trainings</h3>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam harum, exercitationem reprehenderit veniam laboriosam aliquam!</p>
-                </div>
+.banner-container::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.5;
+  background-image: url(/assets/img/banner.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
-                <div class="training cards">
-                    <img src="/assets/img/heartbeat.png" alt="heartbeat">
-                    <h3> Cardio Tranings</h3>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam harum, exercitationem reprehenderit veniam laboriosam aliquam!</p>
-                </div>
+.banner-content {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--White-color);
+}
 
-                <div class="training cards">
-                    <img src="/assets/img/strong.png" alt="strong-muscle">
-                    <h3> Masculation</h3>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam harum, exercitationem reprehenderit veniam laboriosam aliquam!</p>
-                </div>
+.banner-content h2 {
+  font-size: 5rem;
+  text-transform: uppercase;
+  max-width: 550px;
+  line-height: 65px;
+}
 
-                <div class="training cards">
-                    <img src="/assets/img/coach.png" alt="coach">
-                    <h3> Personal Trainings</h3>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam harum, exercitationem reprehenderit veniam laboriosam aliquam!</p>
-                </div>
+.banner-content p {
+  max-width: 650px;
+  line-height: 25px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 
-                <div class="training cards">
-                    <img src="/assets/img/muscle.png" alt="muscle">
-                    <h3> CrossFit</h3>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam harum, exercitationem reprehenderit veniam laboriosam aliquam!</p>
-                </div>
+.banner-content .btn-learn-more {
+  max-width: 150px;
+  outline: none;
+  border: none;
+  background-color: var(--Primary-color);
+  color: var(--White-color);
+  padding: 15px 20px;
+}
 
-                <div class="training cards">
-                    <img src="/assets/img/pyramid.png" alt="pyramid">
-                    <h3> Sport Nutritions</h3>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam harum, exercitationem reprehenderit veniam laboriosam aliquam!</p>
-                </div>
+.banner-content .btn-learn-more:hover {
+  background-color: var(--White-color);
+  color: var(--Primary-color);
+  cursor: pointer;
+}
+/* ========== Banner Section END ========== */
 
-            </div>
-        </section>
+/* ========== Selection Section ========== */
+.selection-contianer {
+  margin-bottom: 40px;
+}
+.selection-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  text-align: center;
+  padding: 0;
+}
 
-        <!--========== Training Section END ==========-->
+.selection-content .for-him h2,
+.for-her h2 {
+  position: absolute;
+  color: var(--White-color);
+  text-transform: uppercase;
+  letter-spacing: 20px;
+  width: 550px;
+  max-width: 100%;
+  left: 50%;
+  top: 50%;
+  font-size: 2rem;
+  transform: translate(-50%, -50%);
+}
 
-    </main>
+.selection-content .for-him span,
+.for-her span {
+  position: absolute;
+  color: var(--White-color);
+  letter-spacing: 5px;
+  font-style: italic;
+  text-transform: uppercase;
+  width: 550px;
+  max-width: 100%;
+  left: 50%;
+  top: 40%;
+  font-size: 1rem;
+  transform: translate(-50%, -50%);
+}
 
+.for-him {
+  position: relative;
+  background-image: url(/assets/img/man.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 450px;
+}
 
-    <script src="/assets/js/index.js"></script>
+.for-her {
+  position: relative;
+  background-image: url(/assets/img/woman.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 450px;
+}
+/* ========== Selection Section END ========== */
 
-    <!--========== Scroll Animation ==========-->
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="/assets/js/scrollanimation.js"></script>
-</body>
-</html>
+/* ========== About Section ========== */
+
+.about-container {
+  margin-top: 80px;
+}
+
+.about-content {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.about-img img {
+  width: 850px;
+  max-width: 100%;
+  height: auto;
+  margin-top: 80px;
+}
+
+.about-text h2 {
+  width: 380px;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  line-height: 50px;
+}
+
+.about-text p {
+  margin-bottom: 40px;
+}
+
+.about-list h3 {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.about-list span {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  font-style: italic;
+  font-weight: 100;
+}
+
+.about-list p {
+  font-size: 0.9rem;
+  font-weight: 100;
+}
+
+/* ========== About Section  END ========== */
+
+/* ========== CLasses Section ========== */
+.classes-container {
+  background-color: var(--Black-color);
+  position: relative;
+  z-index: -1;
+}
+
+.classes-container::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.4;
+  background-image: url(/assets/img/classes.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.classes-content {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--White-color);
+  text-align: center;
+}
+
+.classes-title h2 {
+  text-transform: uppercase;
+  font-size: 3rem;
+}
+
+.classes-title p {
+  max-width: 850px;
+  margin-top: 10px;
+}
+
+.classes-list {
+  margin-top: 50px;
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.class-list h3 {
+  text-transform: uppercase;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.class-list span {
+  display: block;
+  font-size: 0.7rem;
+}
+
+.class-list p {
+  font-size: 0.8rem;
+}
+/* ========== CLasses Section END ========== */
+
+/* ========== Traning Cards Section ========== */
+.training-card-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+}
+
+.cards {
+  padding: 30px 10px;
+}
+
+.cards img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 15px;
+}
+.cards:nth-child(1),
+.cards:nth-child(3),
+.cards:nth-child(5) {
+  background-color: var(--Pale-White);
+}
+/* ========== Traning Cards Section  END ========== */
+
+/* ========== Media Query Section ========== */
+@media (max-width: 900px) {
+  /* ========== Header ========== */
+  header {
+    padding: 20px 10px;
+  }
+
+  header .nav-menu,
+  .social-media {
+    display: none;
+  }
+
+  header .nav-menu.active {
+    width: 80%;
+    height: 550px;
+    background-color: var(--White-color);
+    position: fixed;
+    top: 78px;
+    left: 10%;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+  }
+
+  header .nav-menu li {
+    margin-left: 0;
+    margin-bottom: 40px;
+  }
+
+  .nav-menu li a {
+    font-size: 1.6rem;
+    color: var(--Black-color);
+    font-weight: 400;
+  }
+
+  .menu-toggle {
+    position: relative;
+    width: 50px;
+    height: 30px;
+    background: url(/assets/img/icon-hamburger.svg) no-repeat;
+    background-size: 25px;
+    cursor: pointer;
+  }
+
+  .menu-toggle.active {
+    background: url(/assets/img/icon-close.svg) no-repeat;
+    background-size: 25px;
+  }
+  /* ========== Header END ========== */
+
+  /* ========== Selection ========== */
+  .selection-content {
+    grid-template-columns: 1fr;
+  }
+  /* ========== Selection END ========== */
+
+  /* ========== About ========== */
+  .about-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .about-text h2 {
+    margin: auto;
+    margin-bottom: 10px;
+  }
+  /* ========== About END ========== */
+
+  /* ========== CLasses Section ========== */
+
+  .classes-list {
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+  }
+
+  .class-list:nth-child(5) {
+    position: relative;
+    left: 50%;
+  }
+  /* ========== CLasses Section END ========== */
+
+  /* ========== Traning Cards Section ========== */
+  .training-card-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cards:nth-child(3) {
+    background-color: var(--White-color);
+  }
+  .cards:nth-child(1),
+  .cards:nth-child(4),
+  .cards:nth-child(5) {
+    background-color: var(--Pale-White);
+  }
+  /* ========== Traning Cards Section  END ========== */
+}
+
+@media (max-width: 600px) {
+  /* ========== Banner Section ========== */
+  .banner-content .banner-text {
+    font-size: 3rem;
+    max-width: 300px;
+    line-height: 40px;
+  }
+
+  .banner-content p {
+    max-width: 380px;
+    font-size: 1rem;
+  }
+  /* ========== Banner Section END ========== */
+
+  /* ========== About Section ========== */
+  .about-img img {
+    margin-top: 0;
+  }
+  .about-text h2 {
+    font-size: 2rem;
+    line-height: 40px;
+    width: 100%;
+  }
+  /* ========== About Section END ========== */
+
+  /* ========== Classes Section ========== */
+
+  .classes-content {
+    padding-top: 40px;
+  }
+
+  .classes-title h2 {
+    font-size: 1.8rem;
+  }
+
+  .classes-title p {
+    max-width: 400px;
+  }
+
+  .classes-list {
+    grid-template-columns: 1fr;
+    justify-content: center;
+  }
+
+  .class-list:nth-child(5) {
+    left: 0;
+    margin-bottom: 80px;
+  }
+
+  /* ========== Classes Section END ========== */
+
+  /* ========== Training Section ========== */
+  .training-card-content {
+    grid-template-columns: 1fr;
+  }
+
+  .cards:nth-child(4) {
+    background-color: var(--White-color);
+  }
+  .cards:nth-child(1),
+  .cards:nth-child(3),
+  .cards:nth-child(5) {
+    background-color: var(--Pale-White);
+  }
+
+  /* ========== Training Section END ========== */
+}
